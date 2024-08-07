@@ -5,13 +5,18 @@
 using namespace std;
 
 bool CheckIfnumber(string number) {
-  bool isint;
+  bool isint = false;
 
   for (int i = 0; i < number.length(); i++)
+
   if (isdigit(number[i])) {
     isint = true;
+    if (i == (number.length() - 1)) {
+      break;
+    }
   } else {
     isint = false;
+    return isint;
   }
 
   return isint;
@@ -60,9 +65,9 @@ int main() {
         running = false;
         break;
       } else if (num > randin) {
-        printf("Less.\n");
+        printf("Less then that.\n");
       } else if (num < randin) {
-        printf("More.\n");
+        printf("More then that.\n");
       }
     } else {
       printf("Thats not a number!\n");
